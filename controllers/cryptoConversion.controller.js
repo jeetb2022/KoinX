@@ -8,7 +8,7 @@ const cryptoConvert = async (req,res)=>{
             const toCurrencyPrice= await 
             fetchCurrencyData(toCurrency,date);
             const exchangeRate = fromCurrencyPrice / toCurrencyPrice;
-            
+
             res.status(200).json({exchangeRate:exchangeRate})
         } catch (error) {
             res.status(403).json({ error :`${error}`});

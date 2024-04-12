@@ -1,9 +1,4 @@
-import { Router } from 'express';
-import fetchCompanies from '../controllers/fetchCompanies.controller.js';
-import chechCurrencies from '../middlewares/chechCurrencies.middleware.js';
-
-const companiesRouter = Router();
-
+const companySwagger = `
 /**
  * @swagger
  * /api/companies/currency:
@@ -43,8 +38,6 @@ const companiesRouter = Router();
  *                   type: string
  *                   description: Error message.
  */
+`;
 
-
-companiesRouter.route("/currency").post(chechCurrencies,fetchCompanies);
-
-export default companiesRouter;
+export default companySwagger;
