@@ -1,7 +1,7 @@
 # KoinX
 
 ### Endpoints:
-
+#### Hosted URL: [http://ec2-34-234-82-27.compute-1.amazonaws.com:8000](http://ec2-34-234-82-27.compute-1.amazonaws.com:8000)
 #### POST /api/convert/crypto
 
 - Endpoint to convert the price of one cryptocurrency to another on a specific date.
