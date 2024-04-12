@@ -7,7 +7,7 @@ const fetchCompanies = async (req,res)=>{
         });
         res.status(200).json(companies);
     } catch (error) {
-        res.status(403).json({ error :`${error}`});
+        res.status(403).json({ error :`Error in fetching the COINGECKO API `});
     }
 }
 

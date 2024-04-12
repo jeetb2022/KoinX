@@ -29,7 +29,7 @@ const convertRouter = Router();
  *             example:
  *               fromCurrency: bitcoin
  *               toCurrency: ethereum
- *               date: "2023-01-12"
+ *               date: "12-08-2023"
  *     responses:
  *       '200':
  *         description: Successfully retrieved exchange rate.
