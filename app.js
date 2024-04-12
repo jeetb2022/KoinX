@@ -6,6 +6,7 @@ import http from 'http'
 import dotenv from "dotenv";
 import fetchAndStoreCryptoData from "./controllers/FetchAndStore.controller.js"
 import cron from "node-cron";
+import convertRouter from "./routes/convert.routes.js";
 
 dotenv.config();
 
@@ -30,6 +31,8 @@ app.use(express.static("public"));
 // Use bodyParser for parsing request bodies
 app.use(bodyParser.json());
 
+// Define API routes
+app.use("/api/convert", convertRouter);
 
 // Connect to the database and set up routes
 run().then(async () => {
