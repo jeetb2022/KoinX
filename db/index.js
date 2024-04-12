@@ -1,21 +1,24 @@
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-dotenv.config();
+import mongoose from 'mongoose'; // Importing mongoose for MongoDB connection
+import dotenv from 'dotenv'; // Importing dotenv for environment variables
+dotenv.config(); // Loading environment variables from .env file
 
-const uri = process.env.MONGO_URL;
+// MongoDB client options for connection
 const clientOptions = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useNewUrlParser: true, // Use new URL parser
+  useUnifiedTopology: true, // Use new server discovery and monitoring engine
 };
 
+// Async function to establish connection with MongoDB
 async function run() {
   try {
-    await mongoose.connect(uri, clientOptions);
-    console.log("MongoDB connected!");
+    // Connect to MongoDB using MONGO_URL from environment variables
+    await mongoose.connect(process.env.MONGO_URL, clientOptions);
+    console.log("MongoDB connected!"); // Log successful connection
   } catch (error) {
-    console.error("Error connecting to MongoDB:", error);
-    throw new Error(error);
+    console.error("Error connecting to MongoDB:", error); // Log error if connection fails
+    throw new Error(error); // Throw an error to handle connection failure
   }
 }
 
-export default run;
+export default run; // Exporting the run function for use in app.js
+
